@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/events', function () {
+    return view('admin.events');
+});
+
+Route::get('/events/add', function () {
+    return view('admin.add-event');
+});
+
+Route::get('/events/detail', function () {
+    return view('admin.event');
+});
+
+Route::get('/event-list', function () {
+    return view('guest.event-list');
+});
+
+Route::get('/form-tamu', function () {
+    return view('guest.form');
 });

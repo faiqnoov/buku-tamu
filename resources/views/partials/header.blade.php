@@ -1,0 +1,1 @@
+<h1 class="text-center font-bold text-2xl text-slate-600 mt-2 mb-8">Sistem Buku Tamu Elektronik<br>Politeknik Elektronika Negeri Surabaya</h1>
