@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/events', function () {
-    return view('admin.events');
-});
+// ADMIN
+Route::get('/events', [EventController::class, 'index']);
 
 Route::get('/events/add', function () {
     return view('admin.add-event');
 });
 
-Route::get('/events/detail', function () {
-    return view('admin.event');
-});
+Route::get('/events/{id}', [EventController::class, 'show']);
 
-Route::get('/event-list', function () {
-    return view('guest.event-list');
-});
-
-Route::get('/form-tamu', function () {
-    return view('guest.form');
-});
+// GUEST
+Route::get('/event-list', [EventController::class, 'indexGuest']);
+    
+Route::get('/form-tamu/{id}', [EventController::class, 'showGuest']);

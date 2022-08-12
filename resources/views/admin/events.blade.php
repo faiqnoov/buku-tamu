@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('container')
-  <h2 class="text-xl italic">Admin Dashboard</h2>
+<h2 class="text-xl italic">Admin Dashboard</h2>
   <div class="flex justify-between items-center">
     <h3 class="text-xl font-medium">Daftar Acara</h3>
     <a href="/events/add" class="inline-block px-3 py-2 rounded bg-blue-700 text-white mt-5 mb-3">Tambah Acara</a>
@@ -30,23 +30,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b">
-          <td class="py-4 px-6">
-            1
-          </td>
-          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-            Workshop Kewirausahaan
-          </th>
-          <td class="py-4 px-6">
-            20-08-2022
-          </td>
-          <td class="py-4 px-6">
-            08:00
-          </td>
-          <td class="py-4 px-6">
-            <a href="/events/detail" class="font-medium text-blue-600 hover:underline">Detail</a>
-          </td>
-        </tr>
+        @foreach ($events as $event)
+          <tr class="bg-white border-b">
+            <td class="py-4 px-6">
+              1
+            </td>
+            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+              {{ $event["nama_acara"] }}
+            </th>
+            <td class="py-4 px-6">
+              {{ $event["tgl"] }}
+            </td>
+            <td class="py-4 px-6">
+              {{ $event["waktu"] }}
+            </td>
+            <td class="py-4 px-6">
+              <a href="/events/{{ $event["id"] }}" class="font-medium text-blue-600 hover:underline">Detail</a>
+            </td>
+          </tr>
+        @endforeach
       </tbody>
     </table>
   </div>

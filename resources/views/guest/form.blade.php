@@ -3,7 +3,7 @@
 @section('container')
   <div class="bg-white w-full max-w-md p-5 rounded mx-auto">
     <h2 class="text-xl font-semibold text-center text-gray-900 mb-3">
-      Data Tamu<br>"Workshop Blablabla menggunakan Blablalala"
+      Data Tamu<br>"{{ $event["nama_acara"] }}"
     </h2>
 
     <form>

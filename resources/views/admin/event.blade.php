@@ -8,17 +8,17 @@
       <tr>
         <th>Nama Acara</th>
         <th class="px-2">:</th>
-        <td>Workshop Kewirausahaan</td>
+        <td>{{ $event["nama_acara"] }}</td>
       </tr>
       <tr>
         <th>Tanggal</th>
         <th class="px-2">:</th>
-        <td>20-08-2022</td>
+        <td>{{ $event["tgl"] }}</td>
       </tr>
       <tr>
         <th>Waktu</th>
         <th class="px-2">:</th>
-        <td>08:00</td>
+        <td>{{ $event["waktu"] }}</td>
       </tr>
     </table>
 
