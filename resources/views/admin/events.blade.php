@@ -36,16 +36,16 @@
               1
             </td>
             <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-              {{ $event["nama_acara"] }}
+              {{ $event->judul }}
             </th>
             <td class="py-4 px-6">
-              {{ $event["tgl"] }}
+              {{ $event->tanggal }}
             </td>
             <td class="py-4 px-6">
-              {{ $event["waktu"] }}
+              {{ $event->waktu }}
             </td>
             <td class="py-4 px-6">
-              <a href="/events/{{ $event["id"] }}" class="font-medium text-blue-600 hover:underline">Detail</a>
+              <a href="/events/{{ $event->id }}" class="font-medium text-blue-600 hover:underline">Detail</a>
             </td>
           </tr>
         @endforeach

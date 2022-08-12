@@ -21,17 +21,17 @@ class EventController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show(Event $event)
     {
         return view('admin.event', [
-            'event' => Event::find($id)
+            'event' => $event
         ]);
     }
 
-    public function showGuest($id)
+    public function showGuest(Event $event)
     {
         return view('guest.form', [
-            'event' => Event::find($id)
+            'event' => $event
         ]);
     }
 }

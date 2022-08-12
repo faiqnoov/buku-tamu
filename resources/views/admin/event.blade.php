@@ -8,17 +8,17 @@
       <tr>
         <th>Nama Acara</th>
         <th class="px-2">:</th>
-        <td>{{ $event["nama_acara"] }}</td>
+        <td>{{ $event->judul }}</td>
       </tr>
       <tr>
         <th>Tanggal</th>
         <th class="px-2">:</th>
-        <td>{{ $event["tgl"] }}</td>
+        <td>{{ $event->tanggal }}</td>
       </tr>
       <tr>
         <th>Waktu</th>
         <th class="px-2">:</th>
-        <td>{{ $event["waktu"] }}</td>
+        <td>{{ $event->waktu }}</td>
       </tr>
     </table>
 

@@ -5,10 +5,10 @@
 
   <div class="flex gap-3">
     @foreach ($events as $event)
-      <a href="/form-tamu/{{$event["id"]}}">
+      <a href="/form-tamu/{{$event->id}}">
         <div class="bg-white text-center p-5 rounded-lg">
-          <p>{{ $event["nama_acara"] }}</p>
-          <p>{{ $event["tgl"] }}</p>
+          <p>{{ $event->judul }}</p>
+          <p>{{ $event->tanggal }}</p>
         </div>
       </a>
     @endforeach

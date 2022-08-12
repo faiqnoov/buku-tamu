@@ -21,9 +21,9 @@ Route::get('/events/add', function () {
     return view('admin.add-event');
 });
 
-Route::get('/events/{id}', [EventController::class, 'show']);
+Route::get('/events/{event}', [EventController::class, 'show']);
 
 // GUEST
 Route::get('/event-list', [EventController::class, 'indexGuest']);
     
-Route::get('/form-tamu/{id}', [EventController::class, 'showGuest']);
+Route::get('/form-tamu/{event}', [EventController::class, 'showGuest']);
