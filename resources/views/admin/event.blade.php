@@ -55,32 +55,34 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="bg-white border-b">
-            <td class="py-4 px-6">
-              1
-            </td>
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-              Dadang Suherman
-            </th>
-            <td class="py-4 px-6">
-              PENS
-            </td>
-            <td class="py-4 px-6">
-              Mahasiswa
-            </td>
-            <td class="py-4 px-6">
-              086754257864
-            </td>
-            <td class="py-4 px-6">
-              dadangs@gmail.com
-            </td>
-            {{-- <td class="py-4 px-6">
-              -
-            </td> --}}
-            <td class="py-4 px-6">
-              <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-            </td>
-          </tr>
+          @foreach ($guests as $guest)
+            <tr class="bg-white border-b">
+              <td class="py-4 px-6">
+                1
+              </td>
+              <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                {{ $guest->nama }}
+              </th>
+              <td class="py-4 px-6">
+                {{ $guest->instansi }}
+              </td>
+              <td class="py-4 px-6">
+                {{ $guest->jabatan }}
+              </td>
+              <td class="py-4 px-6">
+                {{ $guest->no_hp }}
+              </td>
+              <td class="py-4 px-6">
+                {{ $guest->email }}
+              </td>
+              {{-- <td class="py-4 px-6">
+                -
+              </td> --}}
+              <td class="py-4 px-6">
+                <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
+              </td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
