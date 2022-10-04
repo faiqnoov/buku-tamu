@@ -31,5 +31,5 @@
     </form>
   </div>
 
-  <a href="/event-list" class="block text-blue-500 font-medium my-5 hover:underline">Kembali ke List Acara</a>
+  <a href="/" class="block text-blue-500 font-medium my-5 hover:underline">Kembali ke List Acara</a>
 @endsection
