@@ -14,10 +14,10 @@ class EventController extends Controller
         ]);
     }
 
-    public function show(Event $event)
-    {
-        return view('guest.form', [
-            'event' => $event
-        ]);
-    }
+    // public function show(Event $event)
+    // {
+    //     return view('guest.form', [
+    //         'event' => $event
+    //     ]);
+    // }
 }

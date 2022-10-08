@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('container')
-  <a href="/dashboard/events" class="block text-blue-500 font-medium my-5 hover:underline">Kembali ke Daftar Acara</a>
+  <a href="/dashboard/events" class="inline-block text-blue-500 font-medium my-5 hover:underline">Kembali ke Daftar Acara</a>
+
+  @if(session()->has('success'))
+    <div class="p-4 mb-3 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+      {{ session('success') }}
+    </div>
+  @endif
 
   <div class="bg-white w-full rounded p-5">
     <div class="md:flex md:justify-between">
@@ -90,7 +96,11 @@
                   -
                 </td> --}}
                 <td class="py-4 px-6">
-                  <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
+                  <form action="/dashboard/events/{{ $guest->event_id }}/{{ $guest->id }}" method="post">
+                    @method('delete')
+                    @csrf
+                    <button class="font-medium text-red-600 hover:underline" onclick="return confirm('Yakin hapus data tamu?')">Hapus</button>
+                  </form>
                 </td>
               </tr>
             @endforeach

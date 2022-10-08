@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,14 @@ use App\Http\Controllers\DashboardController;
 */
 
 // ADMIN
-Route::resource('/dashboard/events', DashboardController::class);
+Route::resource('/dashboard/events', DashboardController::class)->names([
+  'show' => 'event'
+]);
+
+Route::delete('/dashboard/events/{event}/{guest}', [GuestController::class, 'delete']);
 
 // GUEST
 Route::get('/', [EventController::class, 'index']);
     
-Route::get('/form-tamu/{event}', [EventController::class, 'show']);
+Route::get('/form-tamu/{event}', [GuestController::class, 'create'])->name('form');
+Route::post('/form-tamu/{event}', [GuestController::class, 'store']);

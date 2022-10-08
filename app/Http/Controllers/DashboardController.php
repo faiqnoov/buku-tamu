@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -104,10 +105,10 @@ class DashboardController extends Controller
     public function destroy(Event $event)
     {
         // delete guest yang bersangkutan
-        // 
+        Guest::destroy($event->guests);
 
         // delete event
         Event::destroy($event->id);
-        return redirect('/dashboard/events')->with('success', 'Acara telah dihapus!');
+        return redirect('/dashboard/events')->with('success', 'Buku tamu beserta data di dalamnya telah dihapus!');
     }
 }
