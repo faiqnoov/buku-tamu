@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::resource('/dashboard/events', DashboardController::class)->names([
 ]);
 
 Route::delete('/dashboard/events/{event}/{guest}', [GuestController::class, 'delete']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 // GUEST
 Route::get('/', [EventController::class, 'index']);
