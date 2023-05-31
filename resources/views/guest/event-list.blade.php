@@ -13,4 +13,8 @@
       </a>
     @endforeach
   </div>
+
+  <div class="absolute bottom-0 inset-x-0 border-t py-5">
+    <p class="text-center text-slate-500"><a href="/login" class="text-blue-600 font-medium hover:underline">Login</a> untuk dapat mengelola buku tamu.</p>
+  </div>
 @endsection

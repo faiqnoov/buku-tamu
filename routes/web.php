@@ -21,15 +21,17 @@ use App\Http\Controllers\LoginController;
 // ADMIN
 Route::resource('/dashboard/events', DashboardController::class)->names([
   'show' => 'event'
-]);
+])->middleware('auth');
 
 Route::delete('/dashboard/events/{event}/{guest}', [GuestController::class, 'delete']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
 
 // GUEST
 Route::get('/', [EventController::class, 'index']);

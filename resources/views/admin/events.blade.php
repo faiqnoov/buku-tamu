@@ -59,4 +59,14 @@
       </tbody>
     </table>
   </div>
+
+  <div class="absolute bottom-0 inset-x-0 border-t py-5 flex justify-center">
+    <span class="text-slate-500">
+      Login sebagai <span class="font-medium">{{ auth()->user()->name }}</span>.
+      <form action="/logout" method="post" class="inline">
+        @csrf
+        <button type="submit" class="text-blue-600 font-medium hover:underline">Logout</button>
+      </form>
+    </span>
+  </div>
 @endsection
